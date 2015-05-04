@@ -36,7 +36,7 @@ module Sunspot
       # 
       # We can't delegate to @session as commit needs to be sent to delayed job.
       #
-      def commit_if_dirty
+      def commit_if_dirty(soft_commit = false)
         commit if @session.dirty?
       end
       
